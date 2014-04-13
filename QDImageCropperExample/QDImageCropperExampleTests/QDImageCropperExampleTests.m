@@ -1,6 +1,6 @@
 //
-//  QDImageCropperTests.m
-//  QDImageCropperTests
+//  QDImageCropperExampleTests.m
+//  QDImageCropperExampleTests
 //
 //  Created by Nikolay on 13/04/14.
 //
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface QDImageCropperTests : XCTestCase
+@interface QDImageCropperExampleTests : XCTestCase
 
 @end
 
-@implementation QDImageCropperTests
+@implementation QDImageCropperExampleTests
 
 - (void)setUp
 {

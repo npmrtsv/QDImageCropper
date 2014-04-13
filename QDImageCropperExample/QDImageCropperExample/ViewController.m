@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  QDImageCropper
+//  QDImageCropperExample
 //
 //  Created by Nikolay on 13/04/14.
 //
@@ -27,7 +27,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)chooseImage:(id)sender {
+- (IBAction)buttonPressed:(id)sender {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
         UIImagePickerController *newPicker = [[UIImagePickerController alloc] init];
         newPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -48,11 +48,11 @@
         UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
         
         QDImageCropper *cropper = [[QDImageCropper alloc] initWithImage:img
-                                                       resultImageSize:CGSizeMake(100.0, 100.0)
-                                                            completion:^(UIImage *image, CGRect rect, UIImage *croppedImage) {
-                                                                UIImageView *iv = [[UIImageView alloc] initWithImage:croppedImage];
-                                                                [self.view addSubview:iv];
-                                                       }];
+                                                        resultImageSize:CGSizeMake(100.0, 100.0)
+                                                             completion:^(UIImage *image, CGRect rect, UIImage *croppedImage) {
+                                                                 UIImageView *iv = [[UIImageView alloc] initWithImage:croppedImage];
+                                                                 [self.view addSubview:iv];
+                                                             }];
         UINavigationController *navContr = [[UINavigationController alloc] initWithRootViewController:cropper];
         
         [self presentViewController:navContr animated:YES completion:nil];

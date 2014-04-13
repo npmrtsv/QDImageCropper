@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  QDImageCropper
+//  QDImageCropperExample
 //
 //  Created by Nikolay on 13/04/14.
 //
