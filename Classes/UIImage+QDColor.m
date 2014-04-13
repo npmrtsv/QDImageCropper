@@ -1,14 +1,14 @@
 //
-//  UIImage+Color.m
+//  UIImage+QDColor.m
 //  QDImageCropper
 //
 //  Created by Nikolay on 13/04/14.
 //
 //
 
-#import "UIImage+Color.h"
+#import "UIImage+QDColor.h"
 
-@implementation UIImage (Color)
+@implementation UIImage (QDColor)
 
 + (UIImage *)imageWithColor:(UIColor *)color width:(double)width height:(double)height{
     CGRect rect = CGRectMake(0, 0, width, height);

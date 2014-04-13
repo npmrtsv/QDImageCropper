@@ -7,12 +7,12 @@
 //
 
 #import "QDImageCropperOverlay.h"
-#import "UIImage+Color.h"
+#import "UIImage+QDColor.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface QDImageCropperOverlay()
 
-@property (strong, nonatomic) IgnoringTouchesView *sightView;
+@property (strong, nonatomic) QDIgnoringTouchesView *sightView;
 @property (strong, nonatomic) UIColor *color;
 
 @end
@@ -23,7 +23,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _sightView = [[IgnoringTouchesView alloc] initWithFrame:frame];
+        _sightView = [[QDIgnoringTouchesView alloc] initWithFrame:frame];
         [self addSubview:_sightView];
         _sightView.layer.borderWidth = 1;
         _sightView.layer.borderColor = [UIColor whiteColor].CGColor;

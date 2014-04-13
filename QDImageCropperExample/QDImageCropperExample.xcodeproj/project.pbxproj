@@ -21,12 +21,12 @@
 		95FAC04A18FA76F70018389F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FAC02C18FA76F60018389F /* UIKit.framework */; };
 		95FAC05218FA76F70018389F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95FAC05018FA76F70018389F /* InfoPlist.strings */; };
 		95FAC05418FA76F70018389F /* QDImageCropperExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC05318FA76F70018389F /* QDImageCropperExampleTests.m */; };
-		95FAC07B18FA78B80018389F /* IgnoringTouchesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07118FA78B80018389F /* IgnoringTouchesView.m */; };
+		95FAC07B18FA78B80018389F /* QDIgnoringTouchesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07118FA78B80018389F /* QDIgnoringTouchesView.m */; };
 		95FAC07C18FA78B80018389F /* QDImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07318FA78B80018389F /* QDImageCropper.m */; };
 		95FAC07D18FA78B80018389F /* QDImageCropper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FAC07418FA78B80018389F /* QDImageCropper.xib */; };
 		95FAC07E18FA78B80018389F /* QDImageCropperOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07618FA78B80018389F /* QDImageCropperOverlay.m */; };
-		95FAC07F18FA78B80018389F /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07818FA78B80018389F /* UIImage+Color.m */; };
-		95FAC08018FA78B80018389F /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07A18FA78B80018389F /* UIImage+Resize.m */; };
+		95FAC07F18FA78B80018389F /* UIImage+QDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07818FA78B80018389F /* UIImage+QDColor.m */; };
+		95FAC08018FA78B80018389F /* UIImage+QDResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07A18FA78B80018389F /* UIImage+QDResize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,17 +59,17 @@
 		95FAC04F18FA76F70018389F /* QDImageCropperExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QDImageCropperExampleTests-Info.plist"; sourceTree = "<group>"; };
 		95FAC05118FA76F70018389F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		95FAC05318FA76F70018389F /* QDImageCropperExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QDImageCropperExampleTests.m; sourceTree = "<group>"; };
-		95FAC07018FA78B80018389F /* IgnoringTouchesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgnoringTouchesView.h; sourceTree = "<group>"; };
-		95FAC07118FA78B80018389F /* IgnoringTouchesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgnoringTouchesView.m; sourceTree = "<group>"; };
+		95FAC07018FA78B80018389F /* QDIgnoringTouchesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDIgnoringTouchesView.h; sourceTree = "<group>"; };
+		95FAC07118FA78B80018389F /* QDIgnoringTouchesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDIgnoringTouchesView.m; sourceTree = "<group>"; };
 		95FAC07218FA78B80018389F /* QDImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDImageCropper.h; sourceTree = "<group>"; };
 		95FAC07318FA78B80018389F /* QDImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDImageCropper.m; sourceTree = "<group>"; };
 		95FAC07418FA78B80018389F /* QDImageCropper.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDImageCropper.xib; sourceTree = "<group>"; };
 		95FAC07518FA78B80018389F /* QDImageCropperOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDImageCropperOverlay.h; sourceTree = "<group>"; };
 		95FAC07618FA78B80018389F /* QDImageCropperOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDImageCropperOverlay.m; sourceTree = "<group>"; };
-		95FAC07718FA78B80018389F /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
-		95FAC07818FA78B80018389F /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
-		95FAC07918FA78B80018389F /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
-		95FAC07A18FA78B80018389F /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		95FAC07718FA78B80018389F /* UIImage+QDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QDColor.h"; sourceTree = "<group>"; };
+		95FAC07818FA78B80018389F /* UIImage+QDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QDColor.m"; sourceTree = "<group>"; };
+		95FAC07918FA78B80018389F /* UIImage+QDResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QDResize.h"; sourceTree = "<group>"; };
+		95FAC07A18FA78B80018389F /* UIImage+QDResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QDResize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,17 +173,17 @@
 		95FAC06F18FA78B80018389F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				95FAC07018FA78B80018389F /* IgnoringTouchesView.h */,
-				95FAC07118FA78B80018389F /* IgnoringTouchesView.m */,
+				95FAC07018FA78B80018389F /* QDIgnoringTouchesView.h */,
+				95FAC07118FA78B80018389F /* QDIgnoringTouchesView.m */,
 				95FAC07218FA78B80018389F /* QDImageCropper.h */,
 				95FAC07318FA78B80018389F /* QDImageCropper.m */,
 				95FAC07418FA78B80018389F /* QDImageCropper.xib */,
 				95FAC07518FA78B80018389F /* QDImageCropperOverlay.h */,
 				95FAC07618FA78B80018389F /* QDImageCropperOverlay.m */,
-				95FAC07718FA78B80018389F /* UIImage+Color.h */,
-				95FAC07818FA78B80018389F /* UIImage+Color.m */,
-				95FAC07918FA78B80018389F /* UIImage+Resize.h */,
-				95FAC07A18FA78B80018389F /* UIImage+Resize.m */,
+				95FAC07718FA78B80018389F /* UIImage+QDColor.h */,
+				95FAC07818FA78B80018389F /* UIImage+QDColor.m */,
+				95FAC07918FA78B80018389F /* UIImage+QDResize.h */,
+				95FAC07A18FA78B80018389F /* UIImage+QDResize.m */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -287,12 +287,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				95FAC03F18FA76F60018389F /* ViewController.m in Sources */,
-				95FAC08018FA78B80018389F /* UIImage+Resize.m in Sources */,
+				95FAC08018FA78B80018389F /* UIImage+QDResize.m in Sources */,
 				95FAC03918FA76F60018389F /* AppDelegate.m in Sources */,
-				95FAC07F18FA78B80018389F /* UIImage+Color.m in Sources */,
+				95FAC07F18FA78B80018389F /* UIImage+QDColor.m in Sources */,
 				95FAC03518FA76F60018389F /* main.m in Sources */,
 				95FAC07C18FA78B80018389F /* QDImageCropper.m in Sources */,
-				95FAC07B18FA78B80018389F /* IgnoringTouchesView.m in Sources */,
+				95FAC07B18FA78B80018389F /* QDIgnoringTouchesView.m in Sources */,
 				95FAC07E18FA78B80018389F /* QDImageCropperOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +498,7 @@
 				95FAC05918FA76F70018389F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95FAC05A18FA76F70018389F /* Build configuration list for PBXNativeTarget "QDImageCropperExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +507,7 @@
 				95FAC05C18FA76F70018389F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

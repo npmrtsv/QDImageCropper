@@ -6,9 +6,9 @@
 //
 //
 
-#import "IgnoringTouchesView.h"
+#import "QDIgnoringTouchesView.h"
 
-@interface QDImageCropperOverlay : IgnoringTouchesView
+@interface QDImageCropperOverlay : QDIgnoringTouchesView
 
 - (void)setImageSize:(CGSize)size;
 - (void)setSightFrame:(CGRect)frame;

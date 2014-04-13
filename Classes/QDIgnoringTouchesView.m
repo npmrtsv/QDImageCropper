@@ -1,14 +1,14 @@
 //
-//  IgnoringTouchesView.m
+//  QDIgnoringTouchesView.m
 //  QDImageCropper
 //
 //  Created by Nikolay on 13/04/14.
 //
 //
 
-#import "IgnoringTouchesView.h"
+#import "QDIgnoringTouchesView.h"
 
-@implementation IgnoringTouchesView
+@implementation QDIgnoringTouchesView
 
 - (id)initWithFrame:(CGRect)frame
 {

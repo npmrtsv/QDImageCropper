@@ -1,14 +1,14 @@
 //
-//  UIImage+Resize.m
+//  UIImage+QDResize.m
 //  QDImageCropper
 //
 //  Created by Nikolay on 13/04/14.
 //
 //
 
-#import "UIImage+Resize.h"
+#import "UIImage+QDResize.h"
 
-@implementation UIImage (Resize)
+@implementation UIImage (QDResize)
 
 - (UIImage *)resizeImage:(CGSize)size{
     CGRect newRect = CGRectIntegral(CGRectMake(0, 0, size.width, size.height));

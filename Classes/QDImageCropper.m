@@ -8,7 +8,7 @@
 
 #import "QDImageCropper.h"
 #import "QDImageCropperOverlay.h"
-#import "UIImage+Resize.h"
+#import "UIImage+QDResize.h"
 
 @interface QDImageCropper ()<UIScrollViewDelegate>{
     CGFloat navBarHeight;
