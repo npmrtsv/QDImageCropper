@@ -15,7 +15,7 @@
     CGImageRef imageRef = self.CGImage;
     
 	CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef bitmap =CGBitmapContextCreate( NULL,
+    CGContextRef bitmap =CGBitmapContextCreate(NULL,
                                                newRect.size.width,
                                                newRect.size.height,
                                                8,
