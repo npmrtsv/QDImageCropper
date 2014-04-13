@@ -21,7 +21,7 @@
                                                8,
                                                0,
                                                colorSpace,
-                                               kCGImageAlphaPremultipliedLast );
+                                               (CGBitmapInfo) kCGImageAlphaPremultipliedLast);
     CGColorSpaceRelease(colorSpace);
 	
     CGContextConcatCTM(bitmap, CGAffineTransformIdentity);
