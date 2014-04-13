@@ -5,7 +5,7 @@ QDImageCropper
 
 <h1>Installation</h1>
 
-    pod 'QDImageCropper', '~> 0.0.1'
+    pod 'QDImageCropper', '~> 0.0.2'
 
 <h1>How to use</h1>
 
@@ -20,7 +20,7 @@ QDImageCropper
         
     [self presentViewController:navContr animated:YES completion:nil];
     
-iOS 5.0+
+iOS 6.0
     
 <h1>Some customization</h1>
 
