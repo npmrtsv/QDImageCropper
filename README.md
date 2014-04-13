@@ -3,6 +3,10 @@ QDImageCropper
 
 <img src=http://cl.ly/image/2S2p1g3U472Z/Image%202014-04-13%20at%202.52.43%20am.png></img>
 
+<h1>Installation</h1>
+
+    pod 'QDImageCropper', '~> 0.0.1'
+
 <h1>How to use</h1>
 
     QDImageCropper *cropper = [[QDImageCropper alloc] initWithImage:img
