@@ -5,7 +5,7 @@ QDImageCropper
 
 <h2>Installation</h2>
 
-    pod 'QDImageCropper', '~> 0.0.2'
+    pod 'QDImageCropper', '~> 0.0.3'
 
 <h2>How to use</h2>
 
