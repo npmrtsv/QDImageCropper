@@ -3,11 +3,11 @@ QDImageCropper
 
 <img src=http://cl.ly/image/2S2p1g3U472Z/Image%202014-04-13%20at%202.52.43%20am.png></img>
 
-<h1>Installation</h1>
+<h2>Installation</h2>
 
     pod 'QDImageCropper', '~> 0.0.2'
 
-<h1>How to use</h1>
+<h2>How to use</h2>
 
     QDImageCropper *cropper = [[QDImageCropper alloc] initWithImage:img
                                                        resultImageSize:CGSizeMake(100.0, 100.0)
@@ -20,12 +20,11 @@ QDImageCropper
         
     [self presentViewController:navContr animated:YES completion:nil];
     
-iOS 6.0
-    
-<h1>Some customization</h1>
+<h2>Info</h2>
 
 You can set X-axis frame offset and overlay color by editing properties in QDImageCropper.
+iOS 6.0
 
-<h1>Licence</h1>
+<h2>Licence</h2>
 
 QDImageCropper is available under the MIT license. See the LICENSE file for more info.
