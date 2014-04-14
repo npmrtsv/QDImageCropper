@@ -23,7 +23,6 @@
 		95FAC05418FA76F70018389F /* QDImageCropperExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC05318FA76F70018389F /* QDImageCropperExampleTests.m */; };
 		95FAC07B18FA78B80018389F /* QDIgnoringTouchesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07118FA78B80018389F /* QDIgnoringTouchesView.m */; };
 		95FAC07C18FA78B80018389F /* QDImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07318FA78B80018389F /* QDImageCropper.m */; };
-		95FAC07D18FA78B80018389F /* QDImageCropper.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95FAC07418FA78B80018389F /* QDImageCropper.xib */; };
 		95FAC07E18FA78B80018389F /* QDImageCropperOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07618FA78B80018389F /* QDImageCropperOverlay.m */; };
 		95FAC07F18FA78B80018389F /* UIImage+QDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07818FA78B80018389F /* UIImage+QDColor.m */; };
 		95FAC08018FA78B80018389F /* UIImage+QDResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC07A18FA78B80018389F /* UIImage+QDResize.m */; };
@@ -63,7 +62,6 @@
 		95FAC07118FA78B80018389F /* QDIgnoringTouchesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDIgnoringTouchesView.m; sourceTree = "<group>"; };
 		95FAC07218FA78B80018389F /* QDImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDImageCropper.h; sourceTree = "<group>"; };
 		95FAC07318FA78B80018389F /* QDImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDImageCropper.m; sourceTree = "<group>"; };
-		95FAC07418FA78B80018389F /* QDImageCropper.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QDImageCropper.xib; sourceTree = "<group>"; };
 		95FAC07518FA78B80018389F /* QDImageCropperOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QDImageCropperOverlay.h; sourceTree = "<group>"; };
 		95FAC07618FA78B80018389F /* QDImageCropperOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QDImageCropperOverlay.m; sourceTree = "<group>"; };
 		95FAC07718FA78B80018389F /* UIImage+QDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QDColor.h"; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				95FAC07118FA78B80018389F /* QDIgnoringTouchesView.m */,
 				95FAC07218FA78B80018389F /* QDImageCropper.h */,
 				95FAC07318FA78B80018389F /* QDImageCropper.m */,
-				95FAC07418FA78B80018389F /* QDImageCropper.xib */,
 				95FAC07518FA78B80018389F /* QDImageCropperOverlay.h */,
 				95FAC07618FA78B80018389F /* QDImageCropperOverlay.m */,
 				95FAC07718FA78B80018389F /* UIImage+QDColor.h */,
@@ -266,7 +263,6 @@
 			files = (
 				95FAC04118FA76F60018389F /* Images.xcassets in Resources */,
 				95FAC03318FA76F60018389F /* InfoPlist.strings in Resources */,
-				95FAC07D18FA78B80018389F /* QDImageCropper.xib in Resources */,
 				95FAC03C18FA76F60018389F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

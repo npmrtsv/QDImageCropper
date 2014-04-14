@@ -11,7 +11,6 @@
 #import "UIImage+QDResize.h"
 
 @interface QDImageCropper ()<UIScrollViewDelegate>{
-    CGFloat navBarHeight;
     CGRect sightFrame;
     void(^_completion)(UIImage *image, CGRect rect, UIImage *croppedImage);
 }
@@ -21,8 +20,8 @@
 @property (strong, nonatomic) UIImageView *imageView;
 @property (assign, nonatomic) CGFloat scale;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIView *imageContainer;
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) UIView *imageContainer;
 @property (strong, nonatomic) QDImageCropperOverlay *overlayView;
 
 @end
@@ -52,12 +51,17 @@
     
     NSAssert(self.navigationController, @"Cropper needs navigation controller");
     
+    _scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    [_scrollView setDelegate:self];
+    [self.view addSubview:_scrollView];
+    
+    _imageContainer = [[UIView alloc] initWithFrame:self.view.frame];
+    [_scrollView addSubview:_imageContainer];
+    
     _overlayView = [[QDImageCropperOverlay alloc] initWithFrame:self.view.frame];
     [self.view addSubview:_overlayView];
     
     [_overlayView setColor:_overlayColor];
-    
-    navBarHeight = 44.0 + ([UIApplication sharedApplication].statusBarHidden?0.0:20.0);
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Crop", nil)
                                                                               style:UIBarButtonItemStylePlain
@@ -84,7 +88,6 @@
     double coef = (_image.size.width/_image.size.height>sightFrame.size.width/sightFrame.size.height)?_image.size.height/sightFrame.size.height:_image.size.width/sightFrame.size.width;
     
     CGRect frame = sightFrame;
-    frame.origin.y-=navBarHeight;
     frame.size.height = _image.size.height/coef;
     frame.size.width = _image.size.width/coef;
     [_imageView setFrame:frame];
@@ -96,18 +99,18 @@
     [_scrollView setMinimumZoomScale:1.0];
     [_scrollView setMaximumZoomScale:_scale];
     
-    [_imageContainer setFrame:CGRectMake(0.0, 0.0, _imageView.frame.size.width+sightFrame.origin.x*2, _imageView.frame.size.height+sightFrame.origin.y*2 - navBarHeight)];
+    [_imageContainer setFrame:CGRectMake(0.0, 0.0, _imageView.frame.size.width+sightFrame.origin.x*2, _imageView.frame.size.height+sightFrame.origin.y*2)];
     
     [self setupContent];
 }
 
 - (void)setupContent {
-    [_scrollView setContentSize:CGSizeMake(_imageContainer.frame.size.width - sightFrame.origin.x*2*(_scrollView.zoomScale-1.0), _imageContainer.frame.size.height - (sightFrame.origin.y*2 - navBarHeight)*(_scrollView.zoomScale-1.0))];
+    [_scrollView setContentSize:CGSizeMake(_imageContainer.frame.size.width - sightFrame.origin.x*2*(_scrollView.zoomScale-1.0), _imageContainer.frame.size.height - (sightFrame.origin.y*2)*(_scrollView.zoomScale-1.0))];
     
     CGRect frame = _imageContainer.frame;
     
     frame.origin.x = (_scrollView.contentSize.width - _imageContainer.frame.size.width)/2.0;
-    frame.origin.y = (_scrollView.contentSize.height - _imageContainer.frame.size.height + navBarHeight*(_scrollView.zoomScale-1.0))/2.0;
+    frame.origin.y = (_scrollView.contentSize.height - _imageContainer.frame.size.height)/2.0;
     
     _imageContainer.frame = frame;
     
@@ -116,17 +119,18 @@
 }
 
 - (void)setupCenter{
-    [_scrollView setContentOffset:CGPointMake((_scrollView.contentSize.width-self.view.frame.size.width)/2.0, (_scrollView.contentSize.height-self.view.frame.size.height+navBarHeight)/2.0)];
+    [_scrollView setContentOffset:CGPointMake((_scrollView.contentSize.width-self.view.frame.size.width)/2.0, (_scrollView.contentSize.height-self.view.frame.size.height)/2.0)];
 }
 
 - (void)crop{
     float coef = _scrollView.zoomScale;
+    float scale = [[UIScreen mainScreen] scale];
     
     CGRect result;
-    result.origin.x = roundf(_scrollView.contentOffset.x*_image.size.width/_imageView.frame.size.width/coef);
-    result.origin.y = roundf((_scrollView.contentOffset.y+navBarHeight)*_image.size.height/_imageView.frame.size.height/coef);
-    result.size.width = roundf(_image.size.width/coef);
-    result.size.height = roundf(_image.size.width/coef*_imageSize.height/_imageSize.width);
+    result.origin.x = roundf((_scrollView.contentOffset.x+_frameXOffset)*_image.size.width/_imageView.frame.size.width/coef);
+    result.origin.y = roundf((_scrollView.contentOffset.y)*_image.size.height/_imageView.frame.size.height/coef);
+    result.size.width = roundf(_image.size.width/coef/scale);
+    result.size.height = roundf(_image.size.width/coef/scale*_imageSize.height/_imageSize.width);
     
     CGImageRef imageRef = CGImageCreateWithImageInRect([_image CGImage], result);
     UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
