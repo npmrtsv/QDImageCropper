@@ -11,6 +11,7 @@
 #import "UIImage+QDResize.h"
 
 @interface QDImageCropper ()<UIScrollViewDelegate>{
+    CGFloat navBarHeight;
     CGRect sightFrame;
     void(^_completion)(UIImage *image, CGRect rect, UIImage *croppedImage);
 }
@@ -34,6 +35,7 @@
     
     self = [super init];
     if (self) {
+        [self.view setBackgroundColor:[UIColor whiteColor]];
         _imageSize = imageSize;
         _image = image;
         _completion = completion;
@@ -52,6 +54,7 @@
     NSAssert(self.navigationController, @"Cropper needs navigation controller");
     
     _scrollView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    [_scrollView setBackgroundColor:[UIColor blackColor]];
     [_scrollView setDelegate:self];
     [self.view addSubview:_scrollView];
     
@@ -62,6 +65,8 @@
     [self.view addSubview:_overlayView];
     
     [_overlayView setColor:_overlayColor];
+    
+    navBarHeight = 44.0 + ([UIApplication sharedApplication].statusBarHidden?0.0:20.0);
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Crop", nil)
                                                                               style:UIBarButtonItemStylePlain
@@ -88,6 +93,7 @@
     double coef = (_image.size.width/_image.size.height>sightFrame.size.width/sightFrame.size.height)?_image.size.height/sightFrame.size.height:_image.size.width/sightFrame.size.width;
     
     CGRect frame = sightFrame;
+    frame.origin.y-=navBarHeight;
     frame.size.height = _image.size.height/coef;
     frame.size.width = _image.size.width/coef;
     [_imageView setFrame:frame];
@@ -99,18 +105,18 @@
     [_scrollView setMinimumZoomScale:1.0];
     [_scrollView setMaximumZoomScale:_scale];
     
-    [_imageContainer setFrame:CGRectMake(0.0, 0.0, _imageView.frame.size.width+sightFrame.origin.x*2, _imageView.frame.size.height+sightFrame.origin.y*2)];
+    [_imageContainer setFrame:CGRectMake(0.0, 0.0, _imageView.frame.size.width+sightFrame.origin.x*2, _imageView.frame.size.height+sightFrame.origin.y*2 - navBarHeight)];
     
     [self setupContent];
 }
 
 - (void)setupContent {
-    [_scrollView setContentSize:CGSizeMake(_imageContainer.frame.size.width - sightFrame.origin.x*2*(_scrollView.zoomScale-1.0), _imageContainer.frame.size.height - (sightFrame.origin.y*2)*(_scrollView.zoomScale-1.0))];
+    [_scrollView setContentSize:CGSizeMake(_imageContainer.frame.size.width - sightFrame.origin.x*2*(_scrollView.zoomScale-1.0), _imageContainer.frame.size.height - (sightFrame.origin.y*2 - navBarHeight)*(_scrollView.zoomScale-1.0))];
     
     CGRect frame = _imageContainer.frame;
     
     frame.origin.x = (_scrollView.contentSize.width - _imageContainer.frame.size.width)/2.0;
-    frame.origin.y = (_scrollView.contentSize.height - _imageContainer.frame.size.height)/2.0;
+    frame.origin.y = (_scrollView.contentSize.height - _imageContainer.frame.size.height + navBarHeight*(_scrollView.zoomScale-1.0))/2.0;
     
     _imageContainer.frame = frame;
     
@@ -119,7 +125,7 @@
 }
 
 - (void)setupCenter{
-    [_scrollView setContentOffset:CGPointMake((_scrollView.contentSize.width-self.view.frame.size.width)/2.0, (_scrollView.contentSize.height-self.view.frame.size.height)/2.0)];
+    [_scrollView setContentOffset:CGPointMake((_scrollView.contentSize.width-self.view.frame.size.width)/2.0, (_scrollView.contentSize.height-self.view.frame.size.height+navBarHeight)/2.0)];
 }
 
 - (void)crop{
@@ -128,10 +134,9 @@
     
     CGRect result;
     result.origin.x = roundf((_scrollView.contentOffset.x+_frameXOffset)*_image.size.width/_imageView.frame.size.width/coef);
-    result.origin.y = roundf((_scrollView.contentOffset.y)*_image.size.height/_imageView.frame.size.height/coef);
+    result.origin.y = roundf((_scrollView.contentOffset.y+navBarHeight)*_image.size.height/_imageView.frame.size.height/coef);
     result.size.width = roundf(_image.size.width/coef/scale);
     result.size.height = roundf(_image.size.width/coef/scale*_imageSize.height/_imageSize.width);
-    
     CGImageRef imageRef = CGImageCreateWithImageInRect([_image CGImage], result);
     UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];
     
