@@ -53,9 +53,7 @@
                                                                  UIImageView *iv = [[UIImageView alloc] initWithImage:croppedImage];
                                                                  [self.view addSubview:iv];
                                                              }];
-        UINavigationController *navContr = [[UINavigationController alloc] initWithRootViewController:cropper];
-        
-        [self presentViewController:navContr animated:YES completion:nil];
+        [self presentViewController:cropper animated:YES completion:nil];
     }];
 }
 
